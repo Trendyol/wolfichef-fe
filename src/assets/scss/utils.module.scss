@@ -1,0 +1,47 @@
+
+.loader {
+  @include loader;
+  width: 125px;
+  height: 125px;
+}
+
+.order-1-mobile {
+  @include mobile {
+    order: 1;
+  }
+}
+
+.order-2-mobile {
+  @include mobile {
+    order: 2;
+  }
+}
+
+
+.h-100 {
+  min-height: 100vh;
+}
+
+.is-vertical-center {
+  display: grid;
+  width: 100%;
+  align-items: center;
+}
+
+.has-errors {
+  border: 1px solid #ff5043 !important;
+}
+
+.has-background-transparent {
+  background: unset;
+}
+
+.is-gap-1 {
+  gap: 8px;
+}
+
+.is-gap-2 {
+  gap: 16px;
+}
+
+

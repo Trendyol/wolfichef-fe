@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+html {
+  background: #f1f2f7 !important;
+  font-family: 'Rubik', sans-serif;
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #e1e1e1;
+  height: 60px;
+}
+
+@import 'variables';
+@import 'fonts.module';
+@import '~/bulma/bulma';
+@import '~/@creativebulma/bulma-tooltip/src/sass';
+$control-height: unset;
+@import '~/bulma-switch/src/sass';
+@import 'checkbox.module';
+@import 'multiselect.module';
+@import 'animation.module';
+@import 'utils.module';
+
+.preset {
+  color: var(--bl-color-primary);
+  cursor: pointer;
+}
+
+.is-danger {
+  color: var(--bl-color-danger);
+}

@@ -1,0 +1,37 @@
+
+
+
+.notification.toast {
+  padding: 0.65rem 2.5rem 0.65rem 1rem;
+  border-radius: 10px;
+  font-weight: 400;
+  color: #434c3a;
+
+  &.is-success {
+    background-color: rgb(180, 247, 196);
+  }
+
+  &.is-info {
+    background-color: rgb(180, 230, 245);
+  }
+
+  &.is-warning {
+    background-color: rgb(250, 230, 198);
+  }
+
+  &.is-danger {
+    background-color: rgb(255, 180, 180);
+  }
+
+  .delete {
+    background-color: unset;
+    top: unset;
+    &:hover {
+      background-color: unset;
+    }
+    &:before,
+    &:after {
+      background-color: #434c3a;
+    }
+  }
+}

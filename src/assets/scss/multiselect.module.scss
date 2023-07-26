@@ -1,0 +1,19 @@
+
+.multiselect-dropdown {
+  bottom: -8px !important;
+  border: 1px solid var(--bl-color-primary-highlight) !important;
+  border-radius: 4px !important;
+}
+
+.multiselect-option {
+  margin-left: 17px;
+  margin-right: 17px;
+}
+
+.multiselect-option:not(:first-of-type) {
+  border-top: 1px solid var(--bl-color-neutral-lighter);
+}
+
+.multiselect-option-pointed {
+  color: var(--bl-color-primary);
+}

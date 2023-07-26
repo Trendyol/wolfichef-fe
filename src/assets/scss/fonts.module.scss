@@ -1,0 +1,53 @@
+$icon-map: (
+  'circle-exclamation': '\e904',
+  'add-circle': '\e90d',
+  'circle-cross': '\e90e',
+  'circle-info': '\e90f',
+  'circle-success': '\e910',
+  'circle-alert': '\e900',
+  'box': '\e901',
+  'database': '\e902',
+  'folder': '\e903',
+  'gitlab': '\e90a',
+  'hash': '\e90b',
+  'key': '\e905',
+  'layers': '\e90c',
+  'message': '\e906',
+  'trash': '\e908',
+  'heart': '\e9da'
+);
+
+@each $key, $value in $icon-map {
+  .icon-#{$key} {
+    &:before {
+      content: $value;
+    }
+  }
+}
+
+@font-face {
+  font-family: 'icon';
+  src: url('@/assets/fonts/icon.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ico {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.lg {
+    font-size: 2em;
+  }
+}

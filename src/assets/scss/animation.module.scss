@@ -1,0 +1,20 @@
+.beat-fade {
+  animation-name: beat-fade;
+  animation-delay: var(--animation-delay, 0s);
+  animation-direction: var(--animation-direction, normal);
+  animation-duration: var(--animation-duration, 1s);
+  animation-iteration-count: var(--animation-iteration-count, infinite);
+  animation-timing-function: var(--animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+@-webkit-keyframes beat-fade {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.125);
+  }
+}
