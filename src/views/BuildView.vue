@@ -65,11 +65,7 @@
                   v-bind:class="[styles.icon, styles['is-small'], styles['is-right']]"
                   v-if="errors.username.length > 0"
                 >
-                  <span
-                    v-bind:class="[styles['is-danger'], styles.ico, styles['icon-circle-alert']]"
-                  />
                 </span>
-                <FormError v-bind:errors="errors" field="username" />
               </div>
             </div>
             <div v-bind:class="styles.field">
@@ -85,11 +81,7 @@
                   v-bind:class="[styles.icon, styles['is-small'], styles['is-right']]"
                   v-if="errors.token.length > 0"
                 >
-                  <span
-                    v-bind:class="[styles['is-danger'], styles.ico, styles['icon-circle-alert']]"
-                  />
                 </span>
-                <FormError v-bind:errors="errors" field="token" />
               </div>
             </div>
             <div v-bind:class="styles.field">

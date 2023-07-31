@@ -33,15 +33,9 @@ export const BuildValidation: ObjectSchema<{
   registry: string().required(),
   tag: string().required(),
   token: string().when('$stage', (stage, schema) => {
-    if (stage[0] === 2) {
-      return schema.required()
-    }
     return schema.optional()
   }),
   username: string().when('$stage', (stage, schema) => {
-    if (stage[0] === 2) {
-      return schema.required()
-    }
     return schema.optional()
   })
 })
