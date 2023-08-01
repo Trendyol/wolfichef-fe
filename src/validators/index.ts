@@ -32,21 +32,16 @@ export const BuildValidation: ObjectSchema<{
   packages: array().of(packageSchema).required().min(1),
   registry: string().required(),
   tag: string().required(),
-  token: string().when('$stage', (stage, schema) => {
-    return schema.optional()
-  }),
-  username: string().when('$stage', (stage, schema) => {
-    return schema.optional()
-  })
+  token: string().optional(),
+  username: string().optional(),
 })
 
 export const validateForm = <T extends AnyObject>(
   schema: ObjectSchema<T>,
   form: T,
-  context: object
 ): Promise<void | Record<string, string[]>> =>
   schema
-    .validate(form, { abortEarly: false, context })
+    .validate(form, { abortEarly: false })
     .then(() => {
       return Promise.resolve()
     })
