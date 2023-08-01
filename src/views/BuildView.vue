@@ -65,11 +65,7 @@
                   v-bind:class="[styles.icon, styles['is-small'], styles['is-right']]"
                   v-if="errors.username.length > 0"
                 >
-                  <span
-                    v-bind:class="[styles['is-danger'], styles.ico, styles['icon-circle-alert']]"
-                  />
                 </span>
-                <FormError v-bind:errors="errors" field="username" />
               </div>
             </div>
             <div v-bind:class="styles.field">
@@ -85,11 +81,7 @@
                   v-bind:class="[styles.icon, styles['is-small'], styles['is-right']]"
                   v-if="errors.token.length > 0"
                 >
-                  <span
-                    v-bind:class="[styles['is-danger'], styles.ico, styles['icon-circle-alert']]"
-                  />
                 </span>
-                <FormError v-bind:errors="errors" field="token" />
               </div>
             </div>
             <div v-bind:class="styles.field">
@@ -513,7 +505,7 @@ const showAdvanced = ref(false)
 const triggerModal = () => (modalOpen.value = !modalOpen.value)
 
 const handleSubmit = async () => (await validate()) && triggerModal()
-const handleGenerate = async () => (await validate(2)) && generate()
+const handleGenerate = async () => (await validate()) && generate()
 
 const gitlabIntegration = computed(() => import.meta.env.VITE_ENABLE_GITLAB_INTEGRATION === 'true')
 const gitlabDomain = computed(() => import.meta.env.VITE_GITLAB_DOMAIN)
@@ -551,11 +543,11 @@ const clearErrors = () => {
   })
 }
 
-const validate = async (stage: number = 1) => {
+const validate = async () => {
   loading.value = true
   hasErrors.value = false
 
-  await validateForm(BuildValidation, form, { stage })
+  await validateForm(BuildValidation, form)
     .then(clearErrors)
     .catch((errs: Record<keyof BuildForm, string[]>) => {
       clearErrors()
